@@ -14,7 +14,9 @@ Output all the fertile land area in square meters, sorted from smallest area to 
 <h2> Sample walkthru with a smaller farm: </h2>
 Below is the screenshot of a sample 10 * 10 farm, the algorithm needs to calculate all the continous fertile areas (marked in green).
 BarrenAreas: "0 2 4 7", "5 0 9 7", "4 7 7 9"
+</br>
 Areas Calculated in order: "4 8 10"
+</br>
 <div>
   <a href="#"><img src="/images/sample_farm.PNG" height="150" width="150" ></a>
 </div>
