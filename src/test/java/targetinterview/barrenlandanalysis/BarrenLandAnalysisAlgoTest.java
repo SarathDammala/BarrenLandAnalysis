@@ -95,5 +95,16 @@ public class BarrenLandAnalysisAlgoTest {
         assertEquals(expectedResponse, farm.getReponse());
     }
 
+	@Test
+    public void testEmptyBarrenCoordinates() {
+        String[] barrenCoordinates = {};
+        int length 	= 10;
+        int breadth = 10;
+        String expectedResponse = "100 ";
+        Farm farm = new Farm(length, breadth);
+        farm.setBarrenCoordinates(barrenCoordinates);
+        farm.startCalculation();
+        assertEquals(expectedResponse, farm.getReponse());
+    }
 
 }

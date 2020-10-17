@@ -20,9 +20,11 @@ public class Farm {
 		this.length = length;
 		this.breadth = breadth;
 		land = new Coordinate[length][breadth];	
-		this.initializeLand();
 	}
 	
+	/**
+	 * Print the land layout after setting up barren sections.
+	 */
 	public void printLand() {
 		for (int j = this.breadth - 1; j >= 0; j--) {
 			for (int i = 0; i < this.length; i++) {
@@ -32,15 +34,22 @@ public class Farm {
 		}
 	};
 	
+	/**
+	 * Set up barren sections in the farm
+	 */
 	public void setBarrenCoordinates(String[] coordinatesList) {
+		this.initializeLand();
 		// Mark Barren Areas
 		for (String coordinates : coordinatesList) {
-			if (this.error.isBlank()) {
+			if (this.error.isBlank() && !coordinates.isBlank()) {
 				markAllBarrenSections(coordinates.trim());	
 			}
 		}
 	}
 	
+	/***
+	 * Start fertile area calculations
+	 */
 	public void startCalculation() {
 
 		if (this.error.isBlank()) {
@@ -50,9 +59,12 @@ public class Farm {
 		}
 	}
 	
+	/**
+	 * Get order list of areas calculated or an error if any.
+	 * @return response
+	 */
 	public String getReponse() {
 		String response = this.error.isBlank() ? getFertileAreas() : this.error;
-		this.initializeLand();
 		return response;
 	}
 

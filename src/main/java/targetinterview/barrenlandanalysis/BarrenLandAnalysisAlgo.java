@@ -27,7 +27,7 @@ public class BarrenLandAnalysisAlgo
     			System.out.println("Process exiting..");
     			break;
     		} else {
-        		String[] barrenCoordinates = barrenCoordinatesStr.split(","); 
+        		String[] barrenCoordinates = barrenCoordinatesStr.trim().split(","); 
             	farm.setBarrenCoordinates(barrenCoordinates);
             	farm.startCalculation();
             	System.out.println(farm.getReponse());
