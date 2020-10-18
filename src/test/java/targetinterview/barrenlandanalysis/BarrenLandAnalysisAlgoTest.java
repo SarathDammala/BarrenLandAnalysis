@@ -17,8 +17,7 @@ public class BarrenLandAnalysisAlgoTest {
         String expectedResponse = "116800 116800 ";
         Farm farm = new Farm(length, breadth);
         farm.setBarrenCoordinates(barrenCoordinates);
-        farm.startCalculation();
-        assertEquals(expectedResponse, farm.getReponse());
+        assertEquals(expectedResponse, farm.getFertileLandAreas());
     }
 	
 	@Test
@@ -29,8 +28,7 @@ public class BarrenLandAnalysisAlgoTest {
         String expectedResponse = "22816 192608 ";
         Farm farm = new Farm(length, breadth);
         farm.setBarrenCoordinates(barrenCoordinates);
-        farm.startCalculation();
-        assertEquals(expectedResponse, farm.getReponse());
+        assertEquals(expectedResponse, farm.getFertileLandAreas());
     }
 	
 	@Test
@@ -41,8 +39,7 @@ public class BarrenLandAnalysisAlgoTest {
         String expectedResponse = "239400 ";
         Farm farm = new Farm(length, breadth);
         farm.setBarrenCoordinates(barrenCoordinates);
-        farm.startCalculation();
-        assertEquals(expectedResponse, farm.getReponse());
+        assertEquals(expectedResponse, farm.getFertileLandAreas());
 
     }
 	
@@ -54,8 +51,7 @@ public class BarrenLandAnalysisAlgoTest {
         String expectedResponse = "No Fertile Land Found";
         Farm farm = new Farm(length, breadth);
         farm.setBarrenCoordinates(barrenCoordinates);
-        farm.startCalculation();
-        assertEquals(expectedResponse, farm.getReponse());
+        assertEquals(expectedResponse, farm.getFertileLandAreas());
     }
 	
 	@Test
@@ -66,9 +62,8 @@ public class BarrenLandAnalysisAlgoTest {
         String expectedResponse = "4 8 10 ";
         Farm farm = new Farm(length, breadth);
         farm.setBarrenCoordinates(barrenCoordinates);
-        farm.startCalculation();
         farm.printLand();
-        assertEquals(expectedResponse, farm.getReponse());
+        assertEquals(expectedResponse, farm.getFertileLandAreas());
     }
 	
 	@Test
@@ -79,8 +74,7 @@ public class BarrenLandAnalysisAlgoTest {
         String expectedResponse = "Process skipped, CoOrdinates invalid";
         Farm farm = new Farm(length, breadth);
         farm.setBarrenCoordinates(barrenCoordinates);
-        farm.startCalculation();
-        assertEquals(expectedResponse, farm.getReponse());
+        assertEquals(expectedResponse, farm.getFertileLandAreas());
     }
 	
 	@Test
@@ -91,8 +85,7 @@ public class BarrenLandAnalysisAlgoTest {
         String expectedResponse = "Process skipped, BarrenLand not in the specified area";
         Farm farm = new Farm(length, breadth);
         farm.setBarrenCoordinates(barrenCoordinates);
-        farm.startCalculation();
-        assertEquals(expectedResponse, farm.getReponse());
+        assertEquals(expectedResponse, farm.getFertileLandAreas());
     }
 
 	@Test
@@ -103,8 +96,7 @@ public class BarrenLandAnalysisAlgoTest {
         String expectedResponse = "100 ";
         Farm farm = new Farm(length, breadth);
         farm.setBarrenCoordinates(barrenCoordinates);
-        farm.startCalculation();
-        assertEquals(expectedResponse, farm.getReponse());
+        assertEquals(expectedResponse, farm.getFertileLandAreas());
     }
 
 }

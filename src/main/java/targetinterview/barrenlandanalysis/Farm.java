@@ -45,16 +45,17 @@ public class Farm {
 				markAllBarrenSections(coordinates.trim());	
 			}
 		}
+		this.startCalculation();
 	}
 	
 	/***
 	 * Start fertile area calculations
 	 */
-	public void startCalculation() {
+	private void startCalculation() {
 
 		if (this.error.isBlank()) {
-			// Start Calculating Areas from (0,0)
-			this.calculateFertileAreas(0, 0);
+			// Find Fertile Areas from (0,0)
+			this.findFertileAreas(0, 0);
 			Collections.sort(fertileLandAreas);
 		}
 	}
@@ -63,7 +64,7 @@ public class Farm {
 	 * Get order list of areas calculated or an error if any.
 	 * @return response
 	 */
-	public String getReponse() {
+	public String getFertileLandAreas() {
 		String response = this.error.isBlank() ? getFertileAreas() : this.error;
 		return response;
 	}
@@ -126,14 +127,14 @@ public class Farm {
 	 * @param i - X postion in the farm
 	 * @param j - Y position in the farm
 	 */
-	private void calculateFertileAreas(int i, int j) {
+	private void findFertileAreas(int i, int j) {
 		for (int y = j; y < this.breadth; y++) {
 			for (int x = i; x < this.length; x++) {
 				Coordinate coordinate = land[x][y];
 				if (!coordinate.isBarren() && !coordinate.isVisited()) {
 					int totalFertileArea = accumulateAdjacentFertileAreas(x, y);
 					fertileLandAreas.add(totalFertileArea);
-					calculateFertileAreas(x, y);
+					findFertileAreas(x, y);
 				}
 			}
 		}
